@@ -1,9 +1,9 @@
 const brandRoutes = require('express').Router();
-const {BrandController} = require('../controllers/')
+const { BrandController } = require('../controllers/')
 
-brandRoutes.get('/', BrandController.getBrands)
-brandRoutes.get('/create', BrandController.create)
-brandRoutes.get('/delete', BrandController.delete)
-brandRoutes.get('/update', BrandController.update)
+brandRoutes.get('/', BrandController.getAll)
+brandRoutes.post('/create', BrandController.create)
+brandRoutes.delete('/delete/:id', BrandController.delete)
+brandRoutes.put('/update/:id', BrandController.update)
 
 module.exports = brandRoutes;

@@ -1,9 +1,9 @@
 const categoryRoutes = require('express').Router();
 const { CategoriesController } = require('../controllers/')
 
-categoryRoutes.get('/', CategoriesController.getCategories)
-categoryRoutes.get('/create', CategoriesController.create)
-categoryRoutes.get('/delete', CategoriesController.delete)
-categoryRoutes.get('/update', CategoriesController.update)
+categoryRoutes.get('/', CategoriesController.getAll)
+categoryRoutes.post('/create', CategoriesController.create)
+categoryRoutes.delete('/delete/:id', CategoriesController.delete)
+categoryRoutes.put('/update/:id', CategoriesController.update)
 
 module.exports = categoryRoutes;
